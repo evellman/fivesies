@@ -16,9 +16,9 @@ public class Address
 
    public Address(){}
 
-   public Address (String street, String town, String st, int zip)
+   public Address (String streetAddress, String town, String st, int zip)
    {
-      streetAddress = street;
+      this.streetAddress = streetAddress;
       city = town;
       state = st;
       zipCode = zip;
@@ -26,7 +26,9 @@ public class Address
 
    public int compareTo(Object obj)
    {
-	   return 0;
+	   int result = 0;
+	   result = this.streetAddress.compareTo(obj.streetAddress);
+       return result;
    }
 
 
