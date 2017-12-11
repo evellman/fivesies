@@ -36,8 +36,8 @@ public class Address_test
 
 
 
-    System.out.print(home.compareTo(home1)); //neg result
-    System.out.print(home1.compareTo(home)); //pos result
+    System.out.println(home.compareTo(home1)); //neg result
+    System.out.println(home1.compareTo(home)); //pos result
 
 
 

@@ -24,10 +24,22 @@ public class Address
       zipCode = zip;
    }
 
+   /**
+    * returns -1, 0, 1 if I am less than, equal, or greater than object
+    * @return int result
+    */
    public int compareTo(Object obj)
    {
-	   int result = 0;
-	   result = this.streetAddress.compareTo(obj.streetAddress);
+	   Address other = (Address) obj; //hayes will explain l8r
+	   
+	   int num = this.streetAddress.indexOf(" ");
+	   int other_num = other.streetAddress.indexOf(" ");
+	   
+	   String street = this.streetAddress.substring(num);
+	   String other_street = other.streetAddress.substring(other_num);
+	   
+       int result = street.compareTo(other_street);
+       
        return result;
    }
 

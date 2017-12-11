@@ -67,8 +67,6 @@ public class Student //implements Comparable
 
 
 
-
-
     //returns the amount of studnet obj created
     //public static int get_pop()
     
