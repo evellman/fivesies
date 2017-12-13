@@ -39,9 +39,14 @@ public class Address_test
     System.out.println(home.compareTo(home1)); //neg result
     System.out.println(home1.compareTo(home)); //pos result
 
+    Address[] places = {home,home1,home2,home3,home4,home5,home6,home7,home8,home9};
+    
+    Sorts.insertionSort(places);
 
-
-
+    for(Address place: places)
+    {
+        System.out.println(place);
+    }
 
 
 }//end of main

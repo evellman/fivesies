@@ -4,7 +4,7 @@
 //  Represents a street address.
 //********************************************************************
 
-public class Address
+public class Address implements Comparable
 {
 
    private String streetAddress, city, state;
@@ -28,16 +28,18 @@ public class Address
     * returns -1, 0, 1 if I am less than, equal, or greater than object
     * @return int result
     */
-   public int compareTo(Object obj)
+   public int compareTo(Object obj) //must follow rules - very general
    {
-	   Address other = (Address) obj; //hayes will explain l8r
-	   
-	   int num = this.streetAddress.indexOf(" ");
-	   int other_num = other.streetAddress.indexOf(" ");
-	   
-	   String street = this.streetAddress.substring(num);
-	   String other_street = other.streetAddress.substring(other_num);
-	   
+       Address other = (Address) obj; //cast other to the object
+       
+       //finds first space in address
+       int num = this.streetAddress.indexOf(" ");
+       int other_num = other.streetAddress.indexOf(" ");
+       
+       //eliminates numbers to compare street
+       String street = this.streetAddress.substring(num);
+       String other_street = other.streetAddress.substring(other_num);
+       
        int result = street.compareTo(other_street);
        
        return result;
