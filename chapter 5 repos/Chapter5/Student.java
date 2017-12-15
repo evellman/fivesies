@@ -53,9 +53,14 @@ public class Student //implements Comparable
         int result = 0;
         Student temp = (Student) obj;
 
+        result = this.lastName.compareTo(temp.lastName);
+        if (result == 0)
+        {
+            result = this.firstName.compareTo(temp.firstName);
+        }
+        
         return result;
     }
-
 
 
 

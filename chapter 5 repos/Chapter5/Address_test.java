@@ -34,8 +34,13 @@ public class Address_test
     Address home8 = new Address("8 Grace st", "Naperville", "IL", 60565);
     Address home9 = new Address("005 St. Charles st", "Naperville", "IL", 60565);
 
-
-
+    Address lakehome = new Address("456 Sweet Lake Dr", "Gobles", "MI", 12345);
+    Address lakehome2 = lakehome;
+    
+    lakehome2.setState("WI");
+    System.out.println(lakehome);
+    
+    
     System.out.println(home.compareTo(home1)); //neg result
     System.out.println(home1.compareTo(home)); //pos result
 

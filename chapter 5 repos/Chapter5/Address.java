@@ -42,10 +42,24 @@ public class Address implements Comparable
        
        int result = street.compareTo(other_street);
        
+       if (result == 0)
+       {
+           int num2 = Integer.parseInt(this.streetAddress.substring(0,num));
+           int other_num2 = Integer.parseInt(other.streetAddress.substring(0,other_num));
+           
+           result = num2 - other_num2;
+       }
+
+       
        return result;
    }
 
 
+   public void setState(String state)
+   {
+       this.state = state;
+    }
+    
    //-----------------------------------------------------------------
    //  Returns this Address object as a string.
    //-----------------------------------------------------------------
