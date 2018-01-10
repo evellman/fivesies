@@ -9,7 +9,7 @@ public class Student //implements Comparable
 
     private static Address schoolAddress = new Address("440 W. Aurora", "Naperville", "IL", 60540);
 
-
+    
 
     /**
     //  Sets up this Student object with the specified initial values.
@@ -25,7 +25,21 @@ public class Student //implements Comparable
         homeAddress = home;
 
     }
-   
+    
+    /**
+    //  Copies data from other Student object 
+    //  @param Student obj
+    */
+    public Student (Student obj)
+    {
+        
+        this.firstName = obj.firstName; //alias - doesn't matter cuz strongz r immutable
+        this.lastName = new String(obj.lastName); //makes new object - better than alias
+        this.homeAddress = new Address(obj.homeAddress);
+
+    }
+    
+    
     /*------------------------------------------------
     * returns the population = to the amount of student objects created
     */

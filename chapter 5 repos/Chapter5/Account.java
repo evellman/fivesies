@@ -9,7 +9,7 @@
 
 import java.text.NumberFormat;
 
-public class Account implements lockable//, atm ,Comparable
+public class Account implements lockable,Comparable
 {
    private NumberFormat fmt = NumberFormat.getCurrencyInstance();
 
@@ -172,7 +172,10 @@ public class Account implements lockable//, atm ,Comparable
       */
      public void setkey (int pass)
      {
-         password = pass;
+         if (pass == password)
+         {
+             System.out.println("Enter new password: ");
+            }
      }
 
      public void lock ( int locker)
@@ -188,19 +191,20 @@ public class Account implements lockable//, atm ,Comparable
             locked_obj = false;
      }
 
-    public boolean locked ()
-    {
+     public boolean locked ()
+     {
         return locked_obj;
-    }
+     }
 
-    //Comparable methods----------------------------
-          /**  This is the section to implement interface Comparable
-          // it compares the acctNumber
-          */
-    public int compareTo (Object o)
-    {
-        return 0;
-    }//end of compareTo
+     //Comparable methods----------------------------
+           /**  This is the section to implement interface Comparable
+           // it compares the acctNumber
+           */
+     public int compareTo (Object o)
+     {
+         Account other = (Account) o;
+         return this.acctNumber - other.acctNumber;
+     }//end of compareTo
 }//end of class
 
 

@@ -23,7 +23,18 @@ public class Address implements Comparable
       state = st;
       zipCode = zip;
    }
-
+   
+   /**
+    * copy constructor
+    */
+   public Address (Address obj)
+   {
+      this.streetAddress = new String(obj.streetAddress);
+      this.city = new String(obj.city);
+      this.state = new String(obj.state);
+      this.zipCode = (int) obj.zipCode;
+   }
+   
    /**
     * returns -1, 0, 1 if I am less than, equal, or greater than object
     * @return int result
