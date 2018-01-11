@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=
+comment0.target=double\ getPriority()
+comment1.params=new_priority
+comment1.target=void\ setPriority(double)
+numComments=2

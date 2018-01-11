@@ -1,5 +1,4 @@
 
-
 //********************************************************************
 //  Account.java       Author: Lewis/Loftus/Cocking
 //
@@ -147,9 +146,8 @@ public class Account implements lockable,Comparable
    {
        obj.balance -= amount;
        this.balance +=amount;
-
-
    }
+   
    public String statement ( int pass)
    {
 
