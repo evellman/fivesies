@@ -6,21 +6,31 @@ public class Task_test
     {
         Scanner scan = new Scanner(System.in);
         
-        Task one = new Task(1.1,"read psych textbook");
-        Task two = new Task(2.1,"finish english homework");
-        Task three = new Task(3.1,"sleep");
+        Task one = new Task(1.1,"breathe");
+        Task two = new Task(2.1,"eat");
+        Task three = new Task(3.1,"drink","finished");
         
-        System.out.println("Do you want to enter a new task? ");
-        String choice = scan.nextLine();
+        System.out.println("Enter a new task.");
+        System.out.println("Enter Priority: ");
+        double prior = scan.nextDouble();
+        System.out.println("Enter Description: ");
+        String desc = scan.next();
+        Task four = new Task(prior,desc);
+        System.out.println("New task created.");
         
-        if (choice == "yes")
+        System.out.println();
+        
+        System.out.println("Add a note to Task one.");
+        String note = scan.next();
+        one.setNotes(note);
+        
+        System.out.println();
+        
+        Task[] descriptions = {three,one,four,two};
+        Sorts.insertionSort(descriptions);
+        for (Task me: descriptions)
         {
-            System.out.println("Enter Priority: ");
-            double prior = scan.nextDouble();
-            System.out.println("Enter Description: ");
-            String desc = scan.nextLine();
-            
-            Task four = new Task(prior,desc);
+            System.out.println(me);
         }
 
     }

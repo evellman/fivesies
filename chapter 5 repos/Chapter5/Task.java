@@ -2,7 +2,7 @@
 public class Task implements Priority,Comparable
 {
     private double priority;
-    private String task;
+    private String task,notes = "none";
     
     public Task(double prior, String desc)
     {
@@ -10,9 +10,26 @@ public class Task implements Priority,Comparable
         task = desc;
     }
     
+    public Task(double prior, String desc, String note)
+    {
+        priority = prior;
+        task = desc;
+        notes = note;
+    }
+    
+    public String getNotes()
+    {
+        return notes;
+    }
+    
+    public void setNotes(String new_note)
+    {
+        notes = new_note;
+    }
+    
     public String toString()
     {
-        return (priority + "   " + task);
+        return (priority + "   " + task + "   " + notes);
     }
     
     //Priority methods
